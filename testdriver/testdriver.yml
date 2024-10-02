@@ -1,0 +1,42 @@
+version: 4.0.54
+steps:
+  - prompt: >-
+      assert the website has no spelling, grammer, or syntax errors. then scroll
+      down. repeat that until you reach the bottom of the page
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: assert
+        expect: the website has no spelling, grammar, or syntax errors
+      - command: scroll
+        direction: down
+  - prompt: >-
+      assert the website has no spelling, grammer, or syntax errors. then scroll
+      down. repeat that until you reach the bottom of the page
+    commands:
+      - command: assert
+        expect: the website has no spelling, grammar, or syntax errors
+  - prompt: >-
+      assert the website has no spelling, grammer, or syntax errors. then scroll
+      down. repeat that until you reach the bottom of the page
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: assert
+        expect: the website has no spelling, grammar, or syntax errors
+      - command: scroll
+        direction: down
+  - prompt: >-
+      assert the website has no spelling, grammer, or syntax errors. then scroll
+      down. repeat that until you reach the bottom of the page
+    commands:
+      - command: assert
+        expect: the website has no spelling, grammar, or syntax errors
+      - command: scroll
+        direction: down
+  - prompt: >-
+      assert the website has no spelling, grammer, or syntax errors. then scroll
+      down. repeat that until you reach the bottom of the page
+    commands:
+      - command: assert
+        expect: the website has no spelling, grammar, or syntax errors
