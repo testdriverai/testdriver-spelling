@@ -1,10 +1,8 @@
 name: TestDriver.ai
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-  workflow_dispatch:
+  schedule:
+    - cron:  '30 1 * * *'
 
 jobs:
   test:
@@ -20,9 +18,8 @@ jobs:
             cd $env:TEMP
             npm init -y
             npm install dashcam-chrome
-            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized", "--load-extension=$(pwd)/node_modules/dashcam-chrome/build", "${{ env.WEBSITE_URL }}"
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized", "--load-extension=$(pwd)/node_modules/dashcam-chrome/build", "https://testdriver.ai"
             exit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
-          WEBSITE_URL: "https://example.com" # Define the website URL here
